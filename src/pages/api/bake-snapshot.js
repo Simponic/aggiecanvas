@@ -1,6 +1,6 @@
 import { prisma } from "../../../utils/db-client";
 
-const BAKE_INTERVAL_MS = 60 * 1000;
+const BAKE_INTERVAL_MS = 20 * 60 * 1000;
 
 const bake = async () => {
   const oldGrid = (
