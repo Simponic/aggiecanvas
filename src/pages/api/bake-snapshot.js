@@ -35,4 +35,7 @@ export default async (req, res) => {
   res.status(200).json({});
 };
 
-setInterval(bake, BAKE_INTERVAL_MS);
+bake().then(() => setInterval(() => {
+  console.log("baking...");
+  bake().then(() => console.log("finished baking"));
+}, BAKE_INTERVAL_MS));
